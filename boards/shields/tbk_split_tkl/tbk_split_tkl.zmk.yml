@@ -1,0 +1,12 @@
+file_format: "1"
+id: tbk_split_tkl
+name: Fourier Rev. 1
+type: shield
+url: https://github.com/keebio/tbk_split_tkl
+requires:
+  - nice_nano_v2
+features:
+  - keys
+siblings:
+  - tbk_split_tkl_left
+  - tbk_split_tkl_right
