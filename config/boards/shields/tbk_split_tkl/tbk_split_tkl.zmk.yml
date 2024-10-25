@@ -1,8 +1,8 @@
 file_format: "1"
 id: tbk_split_tkl
-name: Fourier Rev. 1
+name: TBog split tkl
 type: shield
-url: https://github.com/keebio/tbk_split_tkl
+url: https://github.com/TBog/zmk-config-split
 requires:
   - nice_nano_v2
 features:
