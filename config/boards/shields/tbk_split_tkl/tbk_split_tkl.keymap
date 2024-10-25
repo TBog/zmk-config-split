@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
 &soft_off { hold-time-ms = <1000>; };
@@ -31,6 +32,27 @@
             flavor = "tap-preferred";
             retro-tap;
             tapping-term-ms = <1000>;
+        };
+
+        http: http {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTTP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "tap-preferred";
+            retro-tap;
+        };
+
+        bt_hold: bt_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BT_HOLD";
+            bindings = <&bt>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            retro-tap;
         };
     };
 
@@ -59,12 +81,12 @@
 
         swap_layer {
             bindings = <
-&hold2boot 0 C_AL_LOCK             &kp F5    &kp F6     &kp F7  &kp F8          &bt BT_SEL 0         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_NXT  &bt BT_PRV  &bt BT_CLR  &bt BT_CLR_ALL    &kp C_SNAPSHOT  &kp C_BRI_AUTO  &hold2boot 0 C_MUTE
-&kp GRAVE               &kp N6     &kp N7    &kp N8     &kp N9  &kp N0          &hold2boot 0 K_LOCK  &trans        &trans        &trans        &trans  &trans      &trans                  &soft_off         &none           &kp C_BRI_UP    &kp C_VOL_UP
-&kp BSPC                &trans     &kp UP    &trans     &trans  &trans          &trans               &trans        &trans        &trans        &trans  &trans      &trans                  &kp TAB           &none           &kp C_BRI_DN    &kp C_VOL_DN
-&kp ENTER               &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans          &trans               &trans        &trans        &trans        &trans  &trans                              &trans
-&kp RSHFT               &trans     &trans    &trans     &trans  &out OUT_TOG    &out OUT_TOG         &trans        &trans        &trans        &trans                          &trans                                        &kp K_VOL_UP
-&kp RCTRL               &kp K_APP  &kp RALT  &mo 1      &trans                  &trans                                           &kp LALT      &mo 1                           &kp RGUI    &kp LCTRL         &bl BL_CYCLE    &kp K_VOL_DN    &bl BL_TOG
+&hold2boot 0 C_AL_LOCK             &bt_hold BT_SEL F5 0  &bt_hold BT_SEL F6 1  &bt_hold BT_SEL F7 2  &bt_hold BT_SEL F8 3    &bt BT_SEL 0         &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3         &bt BT_NXT  &bt BT_PRV  &bt BT_CLR  &bt BT_CLR_ALL    &kp C_SNAPSHOT  &kp C_BRI_AUTO  &hold2boot 0 C_MUTE
+&kp GRAVE               &kp N6     &kp N7                &kp N8                &kp N9                &kp N0                  &hold2boot 0 K_LOCK  &none         &none         &none         &none  &none       &none                   &soft_off         &none           &kp C_BRI_UP    &kp C_VOL_UP
+&kp BSPC                &none      &kp UP                &none                 &none                 &none                   &none                &none         &none         &none         &none  &none       &none                   &kp TAB           &none           &kp C_BRI_DN    &kp C_VOL_DN
+&kp ENTER               &kp LEFT   &kp DOWN              &kp RIGHT             &none                 &none                   &none                &none         &none         &none         &none  &none                               &kp KP_ENTER
+&kp RSHFT               &none      &none                 &none                 &none                 &out OUT_TOG            &out OUT_TOG         &none         &mkp MB4      &mkp MB5      &none                          &kp LSHIFT                                    &kp K_VOL_UP
+&kp RCTRL               &kp K_APP  &kp RALT              &mo 1                 &to 1                                         &to 0                                            &kp LALT      &mo 1                          &kp RGUI    &kp LCTRL         &bl BL_CYCLE    &kp K_VOL_DN    &bl BL_TOG
             >;
         };
     };
