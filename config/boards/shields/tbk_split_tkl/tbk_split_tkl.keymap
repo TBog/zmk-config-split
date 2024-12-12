@@ -13,6 +13,11 @@
 
 &soft_off { hold-time-ms = <1000>; };
 
+&kscan0 {
+    debounce-press-ms = <1>;
+    debounce-release-ms = <10>;
+};
+
 / {
     behaviors {
         sh2cl: sh2cl {
@@ -28,7 +33,6 @@
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            retro-tap;
             tapping-term-ms = <1000>;
         };
 
@@ -39,7 +43,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <220>;
             flavor = "tap-preferred";
-            retro-tap;
         };
 
         bt_td: bt_td {
