@@ -1,8 +1,8 @@
-# How to build the TBSplit TKL?
+# How to build the TBK split TKL?
 
 ## Components
 
-To build the `TBSplit TKL` you need the following materials
+To build the `TBK split TKL` you need the following materials
 
 | Name                  | Count   | Remarks                                                     |
 |:---                   |:-------:|:---                                                         |
