@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="flake image" src="https://github.com/user-attachments/assets/7c1b17a1-0e7b-4075-bc97-278681a24e68">
+    <img alt="TBK split TKL image" src="./docs/img/TBK%20split%20TKL.webp">
     <h3>TBK split TKL</h3>
 </div>
 
