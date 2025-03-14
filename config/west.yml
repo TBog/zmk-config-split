@@ -13,6 +13,6 @@ manifest:
       import: app/west.yml
     - name: zmk-config-tbk
       remote: tbog
-      revision: main
+      revision: led_test
   self:
     path: config
