@@ -24,7 +24,7 @@ include:
     shield: tbk_split_tkl_right
   - board: nice_nano_v2
     shield: tbk_destaggered_tkl_left
-    snippet: studio-rpc-usb-uart #zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    snippet: zmk-usb-logging #studio-rpc-usb-uart
+    #cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano_v2
     shield: tbk_destaggered_tkl_right
